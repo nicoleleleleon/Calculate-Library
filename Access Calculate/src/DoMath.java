@@ -17,8 +17,15 @@ public class DoMath {
 		
 		System.out.println("The discriminant is " + Calculate.discriminant(1,5,6));
 		
-		System.out.println("The improper fraction is " + Calculate.toImproperFrac(6,6,6));
-	
+		System.out.println("The improper fraction is " + Calculate.toImproperFrac(1,2,3));
+		
+		System.out.println("The mixed number is " + Calculate.toMixedNum(7,2));
+		
+		System.out.println("The foil is " + Calculate.foil(2, 3, 6, -7, "n"));
+		
+		System.out.println("The numbers are evenly divisble:" + Calculate.isDivisibleBy(10,5));
+		
+		System.out.println("The absolute value is " + Calculate.absValue(-2));
 	
 	}
 }
