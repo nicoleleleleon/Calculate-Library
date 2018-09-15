@@ -10,34 +10,95 @@ public class Calculate {
 	public static int cube(int number) { //cube returns cube of value passed
 		return number*number*number;
 	}
-	public static double average(int num1,int num2) {
+	public static double average(int num1,int num2) { //accepts two double and returns a double
 		return (num1 + num2)/2.0;	
 	}
-	public static double toDegrees(int number) {
-		return number*180/3.14159;	
+	public static double toDegrees(int number) { //converts angle measure in Radians into degrees-- double to double
+		return number*180/3.14159;	//3.14159 approx for pi
 	}
 	
-	public static double toRadians(int number) {
+	public static double toRadians(int number) { //degrees to radians
 		return number*3.14159/180; 
 	}
-	public static double discriminant(double numA,double numB,double numC) {
+	public static double discriminant(double numA,double numB,double numC) { //3 doubles to 1 double
 		return (numB * numB) - 4*(numA * numC);
 	}
-	public static String toImproperFrac(int numWhole,int numNum,int numDen) {
+	public static String toImproperFrac(int numWhole,int numNum,int numDen) { //mixed number to improper fraction-- 3 ints to string
 		return ((numWhole*numDen) + numNum) + "/" + numDen;
 	}
-	public static String toMixedNum(int numTop, int numBott) {
+	public static String toMixedNum(int numTop, int numBott) { //improper fraction to mixed number-- 2 ints to string
 		return (numTop / numBott) + "_" + (numTop % numBott) + "/" + numBott; 
 	}
-	public static String foil(int aOne, int bOne, int aTwo, int bTwo, String n) {
-		return aOne*aTwo + n + "^2 + " + ((aOne*bTwo)+(bOne*aTwo)) + n + "+ " + (bOne*bTwo);
+	public static String foil(int a, int b, int c, int d, String n) { //binomial multiplication (ax+b)(cx+d) into quadratic equation-- 4 ints to String
+		return a*c + n + "^2 + " + ((a*d)+(b*c)) + n + " + " + (b*d);
 	}
 	//determines if int is evenly divisible by another//returns boolean
 	public static boolean isDivisibleBy(int numerator, int denominator) {
 		return (numerator/denominator) - (numerator % denominator) == (numerator/denominator);
 	}
-	//returns abs Value of double NOT DONNENEEE
+	//returns abs Value of double
 	public static double absValue(double value) {
-		return +value;
+		if(value<=0) {
+			return value*(-1);
+		}else{
+			return value; 
+		}
+	}
+	public static double max(double first, double second) { //returns larger of values passed, returns a double
+		if(first>=second) {
+			return first;
+		}else{
+			return second;
+		}
+	}
+	public static double max(double overFirst, double overSecond, double overThird) { //overload of max method
+		if(overFirst>overSecond && overFirst>overThird) {
+			return overFirst;
+		}else if (overSecond>overThird && overSecond>overFirst) {
+			return overSecond;
+		}else {
+			return overThird;		
+		}
+	}
+	public static int min(int uno, int dos) { //returns smallest, accepts 2 int returns int
+		if(uno>=dos) {
+			return dos;
+		}else {
+			return uno;
+		}
+	}
+	//}
+	//public static double round2(double numDecimal) { //rounds double to 2 decimal places, returns double
+		//return numDecimal%3;
+//	}
+//	public static double exponent(double base, int power) {
+//		double answer;
+//		for(int i=1;i<=power;i++) {
+//			answer = base*power;
+//		return answer;
+	
+//	public static int factorial(int numStart) {
+//		for(int i=numStart;i>=1;i--) {
+//			return numStart*i;
+	
+//	public static boolean isPrime(int num) {
+//		for(i=0; i<1000; i++) {
+//			{
+//				for(num=0; num<i; num++)
+//					if(num%i!=0){
+//						return false;
+//			}else {
+//				return true;
+//			}
+//			}
+//	public static int gcf(int num1, int num2) {
+		
+
+		
 	}
 }
+
+		
+		
+		
+		
