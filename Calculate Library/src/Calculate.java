@@ -67,21 +67,28 @@ public class Calculate {
 			return uno;
 		}
 	}
-	//}
-	//public static double round2(double numDecimal) { //rounds double to 2 decimal places, returns double
-		//return numDecimal%3;
-//	}
-//	public static double exponent(double base, int power) {
-//		double answer;
-//		for(int i=1;i<=power;i++) {
-//			answer = base*power;
-//		return answer;
+
+	public static double round2(double numUnround) { //rounds double to 2 decimal places, returns double
+		double lastNum= numUnround*100%10;
+		if(lastNum>= 5) {
+			return (numUnround*100+1/100);
+		}else {
+			return numUnround*100/100; //doesn't work???
+		}
+	}//says i need to add a bracket but then will say i need to delete
+	
+	public static double exponent(double base, int power) {
+		double answer;
+		for(int i=0;i<=power;i++) {
+			answer = base*power;
+			return answer; //doesn't work?
 	
 //	public static int factorial(int numStart) {
-//		for(int i=numStart;i>=1;i--) {
+//		for(int i=0;i<=numStart;i++){
 //			return numStart*i;
 	
 //	public static boolean isPrime(int num) {
+//		public static double isDivisibleBy();
 //		for(i=0; i<1000; i++) {
 //			{
 //				for(num=0; num<i; num++)
@@ -92,12 +99,17 @@ public class Calculate {
 //			}
 //			}
 //	public static int gcf(int num1, int num2) {
-		
+//		public static int isDivisibleBy();
+//
+//		Using Newton's method for approximating square roots, iterative calculations
+//	public static double sqrt(double num){
+// 			double ans= .5(num/guess+guess);\
+// use for stmt for guess? then if and else until approximation is close enough?
+	
 
-		
+		}	
 	}
 }
-
 		
 		
 		
