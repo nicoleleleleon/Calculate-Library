@@ -13,6 +13,9 @@ public class Calculate {
 	public static double average(int num1,int num2) { //accepts two double and returns a double
 		return (num1 + num2)/2.0;	
 	}
+	public static double average(int num1,int num2, int num3) { //overload of average
+		return (num1 + num2 + num3)/3.0;
+	}
 	public static double toDegrees(int number) { //converts angle measure in Radians into degrees-- double to double
 		return number*180/3.14159;	//3.14159 approx for pi
 	}
@@ -51,38 +54,41 @@ public class Calculate {
 			return second;
 		}
 	}
-	public static double max(double overFirst, double overSecond, double overThird) { //overload of max method
-		if(overFirst>overSecond && overFirst>overThird) {
-			return overFirst;
-		}else if (overSecond>overThird && overSecond>overFirst) {
-			return overSecond;
+	public static double max(double first, double second, double third) { //overload of max method
+		if(first>second && first>third) {
+			return first;
+		}else if (second>third && second>first) {
+			return second;
 		}else {
-			return overThird;		
+			return third;		
 		}
 	}
-	public static int min(int uno, int dos) { //returns smallest, accepts 2 int returns int
-		if(uno>=dos) {
-			return dos;
+	public static int min(int one, int two) { //returns smallest, accepts 2 int returns int
+		if(one>=two) {
+			return two;
 		}else {
-			return uno;
+			return one;
 		}
 	}
 
 	public static double round2(double numUnround) { //rounds double to 2 decimal places, returns double
-		double lastNum= numUnround*100%10;
+		int lastNum= (int)(numUnround*1000%10);
+		int answer= (int)(100*numUnround);
 		if(lastNum>= 5) {
-			return (numUnround*100+1/100);
+			return ((answer+1)/100.0);
 		}else {
-			return numUnround*100/100; //doesn't work???
-		}
-	}//says i need to add a bracket but then will say i need to delete
-	
-	public static double exponent(double base, int power) {
-		double answer;
-		for(int i=0;i<=power;i++) {
-			answer = base*power;
-			return answer; //doesn't work?
-	
+			return answer/100.0;
+	}
+}
+	//public static double exponent(double base, int power) {
+	//	double answer=1.0;
+	//	int i=0;
+	//	while(i<=power) {
+	//	answer *= base;
+	//	i++;	
+	//	return answer;
+	//}  saying I must return a double??
+	}
 //	public static int factorial(int numStart) {
 //		for(int i=0;i<=numStart;i++){
 //			return numStart*i;
@@ -107,10 +113,10 @@ public class Calculate {
 // use for stmt for guess? then if and else until approximation is close enough?
 	
 
-		}	
 	}
-}
-		
+	
+	
+
 		
 		
 		

@@ -11,6 +11,8 @@ public class DoMath {
 		
 		System.out.println("The average is " + Calculate.average(5,9));
 		
+		System.out.println("The average is " + Calculate.average(10,20,30));
+		
 		System.out.println("The degrees is " + Calculate.toDegrees(6));
 		
 		System.out.println("The Radians is " + Calculate.toRadians(180));
@@ -33,7 +35,7 @@ public class DoMath {
 	
 		System.out.println("The smallest of the two values is " + Calculate.min(6,7));
 
-		System.out.println("The rounded number is " + Calculate.round2(9.126));
+		System.out.println("The rounded number is " + Calculate.round2(9.125));
 
 		System.out.println("The value is " + Calculate.exponent(1.5,2));
 	
