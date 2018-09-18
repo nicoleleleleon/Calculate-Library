@@ -88,7 +88,7 @@ public class Calculate {
 	//	i++;	
 	//	return answer;
 	//}  saying I must return a double??
-	}
+//	}
 //	public static int factorial(int numStart) {
 //		for(int i=0;i<=numStart;i++){
 //			return numStart*i;
@@ -111,9 +111,10 @@ public class Calculate {
 //	public static double sqrt(double num){
 // 			double ans= .5(num/guess+guess);\
 // use for stmt for guess? then if and else until approximation is close enough?
-	
 
-	}
+}
+
+	
 	
 	
 

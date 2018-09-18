@@ -37,7 +37,7 @@ public class DoMath {
 
 		System.out.println("The rounded number is " + Calculate.round2(9.125));
 
-		System.out.println("The value is " + Calculate.exponent(1.5,2));
+//		System.out.println("The value is " + Calculate.exponent(1.5,2));
 	
 		//System.out.println("The outcome of the factorial is " + Calculate.factorial(3));
 		
