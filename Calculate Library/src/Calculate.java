@@ -36,8 +36,8 @@ public class Calculate {
 		return a*c + n + "^2 + " + ((a*d)+(b*c)) + n + " + " + (b*d);
 	}
 	//determines if int is evenly divisible by another//returns boolean
-	public static boolean isDivisibleBy(int numerator, int denominator) {
-		return (numerator/denominator) - (numerator % denominator) == (numerator/denominator);
+	public static boolean isDivisibleBy(int num, int deno) {
+		return (num/deno) - (num % deno) == (num/deno);
 	}
 	//returns abs Value of double
 	public static double absValue(double value) {
@@ -80,30 +80,32 @@ public class Calculate {
 			return answer/100.0;
 	}
 }
-	//public static double exponent(double base, int power) {
-	//	double answer=1.0;
-	//	int i=0;
-	//	while(i<=power) {
-	//	answer *= base;
-	//	i++;	
-	//	return answer;
-	//}  saying I must return a double??
-//	}
-//	public static int factorial(int numStart) {
-//		for(int i=0;i<=numStart;i++){
-//			return numStart*i;
-	
-//	public static boolean isPrime(int num) {
-//		public static double isDivisibleBy();
-//		for(i=0; i<1000; i++) {
-//			{
-//				for(num=0; num<i; num++)
-//					if(num%i!=0){
-//						return false;
-//			}else {
-//				return true;
-//			}
-//			}
+	public static double exponent(double base, int power) {
+		double answer=1.0;
+		int i=0;
+		while(i<power) {
+		answer *= base;
+		i++;	
+	}
+		return answer;
+	}
+	public static int factorial(int numStart) {
+		int answer=1;
+		for(int i=1;i<=numStart;i++) {
+			answer= answer*=i;
+		}
+			return answer;
+	}
+	public static boolean isPrime(int num) {
+		boolean answer= true;
+		if(num<4) {
+			return num<4;
+		}else {
+		for(int deno=2;deno<=7;deno++) {
+			if(Calculate.isDivisibleBy(num, deno));
+		}
+		
+		
 //	public static int gcf(int num1, int num2) {
 //		public static int isDivisibleBy();
 //
@@ -112,6 +114,7 @@ public class Calculate {
 // 			double ans= .5(num/guess+guess);\
 // use for stmt for guess? then if and else until approximation is close enough?
 
+}
 }
 
 	
