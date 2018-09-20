@@ -103,14 +103,14 @@ public class Calculate {
 
 	public static boolean isPrime(int num) { //prime? int to boolean         
 		boolean answer= true;
-		if(num<4) {
+		if(num<4) { //1,2,3 is prime
 			return answer;
-		}else if (num==5) {
+		}else if (num==5) { //5 and 7 are prime
 			return answer;
 		}else if (num==7) {
 			return answer;
 		}else {
-			for(int deno=2;deno<=7;deno++) {
+			for(int deno=2;deno<=7;deno++) { //if can be divided by 3-7, not prime
 			if(Calculate.isDivisibleBy(num, deno)) {
 			answer= false; 
 			}
@@ -129,13 +129,13 @@ public class Calculate {
 					answer=i;
 					}
 					}else {
-						if(num1<num2) {
+						if(num1<num2) {// since don't want to divide smaller# by bigger#
 							for(int i=num1;num1>=1;i--) {
 								if((Calculate.isDivisibleBy(num1,i))&&(Calculate.isDivisibleBy(num2,i))) {
 							}
 								answer=i;
 						}		
-					}
+					}// add printlns to see what it thinks is the answer
 				 }	
 			return answer;
 		}
@@ -144,14 +144,14 @@ public class Calculate {
 
 		//Using Newton's method for approximating square roots, iterative calculations
 	public static double sqrt(double num){
-	int guess= 10;
-		while((ans*ans)
-	double ans= .5(num/guess+guess);
-
-
-		}
-
-	
+		int guess= 10;
+		double ans= .5*((num/guess)+guess);
+			while((ans*ans)-num>=.005) {
+				guess = ans; //how do I get it to plug back in?
+		}//put guess into the while () so that we are doing something with the guess?
+		
+	}
+}//nOTHING PRINTED AGAIN??
 	
 	
 
