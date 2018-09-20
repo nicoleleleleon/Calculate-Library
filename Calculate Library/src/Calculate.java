@@ -37,8 +37,12 @@ public class Calculate {
 	}
 	//determines if int is evenly divisible by another//returns boolean
 	public static boolean isDivisibleBy(int num, int deno) {
+		if(deno==0) {
+			return false;
+		}else {
 		return (num/deno) - (num % deno) == (num/deno);
 	}
+}
 	//returns abs Value of double
 	public static double absValue(double value) {
 		if(value<=0) {
@@ -80,7 +84,7 @@ public class Calculate {
 			return answer/100.0;
 	}
 }
-	public static double exponent(double base, int power) {
+	public static double exponent(double base, int power) { //raises val to +int, double and int to double
 		double answer=1.0;
 		int i=0;
 		while(i<power) {
@@ -89,33 +93,63 @@ public class Calculate {
 	}
 		return answer;
 	}
-	public static int factorial(int numStart) {
+	public static int factorial(int numStart) { //returns factorial, int to int
 		int answer=1;
 		for(int i=1;i<=numStart;i++) {
 			answer= answer*=i;
 		}
 			return answer;
 	}
-	public static boolean isPrime(int num) {
+
+	public static boolean isPrime(int num) { //prime? int to boolean         
 		boolean answer= true;
 		if(num<4) {
-			return num<4;
+			return answer;
+		}else if (num==5) {
+			return answer;
+		}else if (num==7) {
+			return answer;
 		}else {
-		for(int deno=2;deno<=7;deno++) {
-			if(Calculate.isDivisibleBy(num, deno));
+			for(int deno=2;deno<=7;deno++) {
+			if(Calculate.isDivisibleBy(num, deno)) {
+			answer= false; 
+			}
+		}			
+	}return answer;
+}
+	
+	public static int gcf(int num1, int num2) { //finds gcf, two int to int
+		int answer= 1; //if they don't share any factors then gcf is one
+			if(num1>num2) {
+				for(int i=num2;num2>=1;i--) {
+					//working backwards starting from bigger number to get largest number
+					if((Calculate.isDivisibleBy(num1,i))&&(Calculate.isDivisibleBy(num2,i))) {
+						//so that divisible for both numbers
+						}
+					answer=i;
+					}
+					}else {
+						if(num1<num2) {
+							for(int i=num1;num1>=1;i--) {
+								if((Calculate.isDivisibleBy(num1,i))&&(Calculate.isDivisibleBy(num2,i))) {
+							}
+								answer=i;
+						}		
+					}
+				 }	
+			return answer;
 		}
-		
-		
-//	public static int gcf(int num1, int num2) {
-//		public static int isDivisibleBy();
-//
-//		Using Newton's method for approximating square roots, iterative calculations
-//	public static double sqrt(double num){
-// 			double ans= .5(num/guess+guess);\
-// use for stmt for guess? then if and else until approximation is close enough?
+				//NOTHING PRINTED OUT WHY
+				
 
-}
-}
+		//Using Newton's method for approximating square roots, iterative calculations
+	public static double sqrt(double num){
+	int guess= 10;
+		while((ans*ans)
+	double ans= .5(num/guess+guess);
+
+
+		}
 
 	
 	

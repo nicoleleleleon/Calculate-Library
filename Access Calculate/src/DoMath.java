@@ -39,11 +39,11 @@ public class DoMath {
 
 		System.out.println("The value is " + Calculate.exponent(5,2));
 	
-		System.out.println("The outcome of the factorial is " + Calculate.factorial(3));
+		System.out.println("The outcome of the factorial is " + Calculate.factorial(4));
 		
-		//System.out.println("The number is prime: " + Calculate.isPrime(7));
+		System.out.println("The number is prime: " + Calculate.isPrime(9));
 		
-		//System.out.println("The greatest common factors  are " + Calculate.gcf(12));
+		System.out.println("The greatest common factor is " + Calculate.gcf(12,24));
 		
 		//System.out.println("The square root is " + Calculate.sqrt(9));
 		
