@@ -125,33 +125,34 @@ public class Calculate {
 					//working backwards starting from bigger number to get largest number
 					if((Calculate.isDivisibleBy(num1,i))&&(Calculate.isDivisibleBy(num2,i))) {
 						//so that divisible for both numbers
+						answer=i;
+						//System.out.println(i);
 						}
-					answer=i;
-					}
-					}else {
+				} }else {
 						if(num1<num2) {// since don't want to divide smaller# by bigger#
 							for(int i=num1;num1>=1;i--) {
 								if((Calculate.isDivisibleBy(num1,i))&&(Calculate.isDivisibleBy(num2,i))) {
-							}
-								answer=i;
+									answer=i;		
 						}		
-					}// add printlns to see what it thinks is the answer
+					}// keeps going and going, why????
 				 }	
-			return answer;
-		}
-				//NOTHING PRINTED OUT WHY
+			}
+	return answer;
+	}
+}				//NOTHING PRINTED OUT WHY
 				
 
 		//Using Newton's method for approximating square roots, iterative calculations
-	public static double sqrt(double num){
-		int guess= 10;
-		double ans= .5*((num/guess)+guess);
-			while((ans*ans)-num>=.005) {
-				guess = ans; //how do I get it to plug back in?
-		}//put guess into the while () so that we are doing something with the guess?
-		
-	}
-}//nOTHING PRINTED AGAIN??
+	//public static double sqrt(double num){
+	//	double guess= 10;
+	//	double ans= 10;
+	//		while((ans*ans)-num>=.005) {
+	//			ans= .5*((num/guess)+guess);
+//				double guess= ans;
+//		}
+//			return ans;
+//	}
+//nOTHING PRINTED AGAIN??
 	
 	
 

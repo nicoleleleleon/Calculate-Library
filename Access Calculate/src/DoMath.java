@@ -43,9 +43,9 @@ public class DoMath {
 		
 		System.out.println("The number is prime: " + Calculate.isPrime(9));
 		
-		System.out.println("The greatest common factor is " + Calculate.gcf(12,24));
+		System.out.println("The greatest common factor is " + Calculate.gcf(24,12));
 		
-		System.out.println("The square root is " + Calculate.sqrt(9));
+		//System.out.println("The square root is " + Calculate.sqrt(9));
 		
 		
 	}
