@@ -119,27 +119,27 @@ public class Calculate {
 }
 	
 	public static int gcf(int num1, int num2) { //finds gcf, two int to int
-		int answer= 1; //if they don't share any factors then gcf is one
-			if(num1>num2) {
+		int answer= num1; //if they don't share any factors then gcf is one
+		if(num1>num2) {
+			//answer =1;
 				for(int i=num2;num2>=1;i--) {
 					//working backwards starting from bigger number to get largest number
-					if((Calculate.isDivisibleBy(num1,i))&&(Calculate.isDivisibleBy(num2,i))) {
+					if(Calculate.isDivisibleBy(num1,i)&&Calculate.isDivisibleBy(num2,i)) {
 						//so that divisible for both numbers
-						answer=i;
-						//System.out.println(i);
+						return i; //so that it stops instead of continuously looping
 						}
-				} }else {
-						if(num1<num2) {// since don't want to divide smaller# by bigger#
+				} 
+		}else if(num1<num2){
+						// since don't want to divide smaller# by bigger#
 							for(int i=num1;num1>=1;i--) {
 								if((Calculate.isDivisibleBy(num1,i))&&(Calculate.isDivisibleBy(num2,i))) {
-									answer=i;		
+									return i;		
 						}		
-					}// keeps going and going, why????
-				 }	
-			}
+					}
+	}
 	return answer;
 	}
-}				//NOTHING PRINTED OUT WHY
+}				
 				
 
 		//Using Newton's method for approximating square roots, iterative calculations
