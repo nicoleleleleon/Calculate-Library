@@ -139,21 +139,21 @@ public class Calculate {
 	}
 	return answer;
 	}
-}				
 				
-
 		//Using Newton's method for approximating square roots, iterative calculations
-	//public static double sqrt(double num){
-	//	double guess= 10;
-	//	double ans= 10;
-	//		while((ans*ans)-num>=.005) {
-	//			ans= .5*((num/guess)+guess);
-//				double guess= ans;
-//		}
-//			return ans;
-//	}
-//nOTHING PRINTED AGAIN??
-	
+	public static double sqrt(double num){
+		if(num<0) {
+			System.out.println("Negative numbers don't have square roots you ~fool~");
+		}
+		double guess= 1.00;
+		double diff= 1;
+			while(diff>=.005) {
+				guess= ((num/guess)+guess)/2;
+				diff= Calculate.absValue(num-(guess*guess));
+				}
+			return Calculate.round2(guess);
+		}
+}
 	
 
 		
