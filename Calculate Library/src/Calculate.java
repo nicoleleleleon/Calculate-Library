@@ -38,6 +38,9 @@ public class Calculate {
 	//determines if int is evenly divisible by another//returns boolean
 	public static boolean isDivisibleBy(int num, int deno) {
 		if(deno==0) {
+			throw new IllegalArgumentException("Impossible to divide by \"0\".");
+		}
+		if(deno==0) {
 			return false;
 		}else {
 		return (num/deno) - (num % deno) == (num/deno);
@@ -85,6 +88,9 @@ public class Calculate {
 	}
 }
 	public static double exponent(double base, int power) { //raises val to +int, double and int to double
+		if(power<0 || base<0) {
+			throw new IllegalArgumentException("Can't input negative numbers");
+		}
 		double answer=1.0;
 		int i=0;
 		while(i<power) {
@@ -94,6 +100,9 @@ public class Calculate {
 		return answer;
 	}
 	public static int factorial(int numStart) { //returns factorial, int to int
+		if(numStart<0) {
+		throw new IllegalArgumentException("Can't input negative numbers");
+		}
 		int answer=1;
 		for(int i=1;i<=numStart;i++) {
 			answer= answer*=i;
@@ -143,16 +152,21 @@ public class Calculate {
 		//Using Newton's method for approximating square roots, iterative calculations
 	public static double sqrt(double num){
 		if(num<0) {
-			System.out.println("Negative numbers don't have square roots you ~fool~");
+			throw new IllegalArgumentException("Negative numbers don't have square roots you ~fool~");
 		}
 		double guess= 1.00;
 		double diff= 1;
-			while(diff>=.005) {
+			while(diff>=.005) { //difference between the estimate and true
 				guess= ((num/guess)+guess)/2;
 				diff= Calculate.absValue(num-(guess*guess));
 				}
 			return Calculate.round2(guess);
 		}
+//	public static int quadForm(int a, int b, int c) {
+		
+//	}
+
+
 }
 	
 

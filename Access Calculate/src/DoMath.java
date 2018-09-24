@@ -47,6 +47,8 @@ public class DoMath {
 		
 		System.out.println("The square root is " + Calculate.sqrt(-1));
 		
+//		System.out.println("The roots are " + Calculate.quadForm(1,6,9));
+		
 		
 	}
 	
