@@ -10,17 +10,17 @@ public class Calculate {
 	public static int cube(int number) { //cube returns cube of value passed
 		return number*number*number;
 	}
-	public static double average(int num1,int num2) { //accepts two double and returns a double
+	public static double average(double num1,double num2) { //accepts two double and returns a double
 		return (num1 + num2)/2.0;	
 	}
-	public static double average(int num1,int num2, int num3) { //overload of average
+	public static double average(double num1,double num2, double num3) { //overload of average
 		return (num1 + num2 + num3)/3.0;
 	}
-	public static double toDegrees(int number) { //converts angle measure in Radians into degrees-- double to double
+	public static double toDegrees(double number) { //converts angle measure in Radians into degrees-- double to double
 		return number*180/3.14159;	//3.14159 approx for pi
 	}
 	
-	public static double toRadians(int number) { //degrees to radians
+	public static double toRadians(double number) { //degrees to radians
 		return number*3.14159/180; 
 	}
 	public static double discriminant(double numA,double numB,double numC) { //3 doubles to 1 double
