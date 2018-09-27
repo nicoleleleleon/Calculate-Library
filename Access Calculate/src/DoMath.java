@@ -45,12 +45,13 @@ public class DoMath {
 		
 		System.out.println("The greatest common factor is " + Calculate.gcf(24,12));
 		
-		System.out.println("The square root is " + Calculate.sqrt(-1));
+		System.out.println("The square root is " + Calculate.sqrt(9));
 		
-//		System.out.println("The roots are " + Calculate.quadForm(1,6,9));
+		System.out.println("The root(s) are/is " + Calculate.quadForm(1,6,9));
 		
 		
 	}
 	
 }
+
 

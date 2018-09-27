@@ -27,9 +27,15 @@ public class Calculate {
 		return (numB * numB) - 4*(numA * numC);
 	}
 	public static String toImproperFrac(int numWhole,int numNum,int numDen) { //mixed number to improper fraction-- 3 ints to string
+		if(numDen==0) {
+			throw new IllegalArgumentException("You cannot divide by \"0\".");
+		}
 		return ((numWhole*numDen) + numNum) + "/" + numDen;
 	}
 	public static String toMixedNum(int numTop, int numBott) { //improper fraction to mixed number-- 2 ints to string
+		if(numBott==0) {
+			throw new IllegalArgumentException("\"0\" is unacceptable input because you can't divide by \"0\".");
+		}
 		return (numTop / numBott) + "_" + (numTop % numBott) + "/" + numBott; 
 	}
 	public static String foil(int a, int b, int c, int d, String n) { //binomial multiplication (ax+b)(cx+d) into quadratic equation-- 4 ints to String
@@ -88,9 +94,12 @@ public class Calculate {
 	}
 }
 	public static double exponent(double base, int power) { //raises val to +int, double and int to double
-		if(power<0 || base<0) {
+		if(power<0) {
 			throw new IllegalArgumentException("Can't input negative numbers");
 		}
+		if(power==0) {
+			return 1;
+		}else {
 		double answer=1.0;
 		int i=0;
 		while(i<power) {
@@ -98,10 +107,10 @@ public class Calculate {
 		i++;	
 	}
 		return answer;
-	}
+	}}
 	public static int factorial(int numStart) { //returns factorial, int to int
 		if(numStart<0) {
-		throw new IllegalArgumentException("Can't input negative numbers");
+		throw new IllegalArgumentException("A negative number is an unacceptable input.");
 		}
 		int answer=1;
 		for(int i=1;i<=numStart;i++) {
@@ -162,14 +171,27 @@ public class Calculate {
 				}
 			return Calculate.round2(guess);
 		}
-//	public static int quadForm(int a, int b, int c) {
-		
-//	}
-
+	
+	public static String quadForm(int a, int b, int c) { //approximates any real roots
+		double root1= 0;
+		double root2= 0;
+		if (Calculate.discriminant(a, b, c)<0) {
+			return "no real roots";
+		}
+		if (Calculate.discriminant(a,b,c)==0) {
+			return "x = " + ((-b)/ (2.0*(a)));
+		}
+		if (Calculate.discriminant(a,b,c)>0) {
+			root1= Calculate.round2(((-b)+Calculate.sqrt(Calculate.discriminant(a,b,c)))/(2*a));
+			root2= Calculate.round2(((-b)-Calculate.sqrt(Calculate.discriminant(a,b,c)))/(2*a));
+				return "x = "  + root1 + " & " + root2;	
+		}
+		return "";
+	}
 
 }
-	
+
 
 		
-		
-		
+
+
