@@ -1,3 +1,7 @@
+//Takes the input from user
+//author: Nicole Leon
+//Version 2; 10/9/18
+
 import java.util.*;
 public class QuadraticClient {
 	public static void main(String[] args) {

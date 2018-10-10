@@ -1,3 +1,7 @@
+//Accept 3 doubles from user and describe the graph of the quadratic equation
+//author: Nicole Leon
+//Version 2; 10/9/18
+
 
 public class Quadratic {
 	public static String quadrDescriber (double a, double b, double c) {
@@ -16,43 +20,49 @@ public class Quadratic {
 		}else if (a<0) {
 			opening = "Down";
 		} else {
-			opening = "Linear equations don't have an \" opening \".";
+			opening = "N/A";
 		}
 		System.out.println("Opens: " + opening);
 		
-		// the x value for axis of symmestry equation
+		// the x value for axis of symmetry equation
 		double axisSym = (-b)/(2*a);
-		//round2
-		double guess= 1.00;
-		double diff= 1;
-			while(diff>=.005) { //difference between the estimate and true
-				guess= ((axisSym/guess)+guess)/2;
-				//find absvalue of difference
-				if(axisSym-(guess*guess)<=0) {
-					diff = (axisSym-(guess*guess))*(-1);
-				}else{
-					diff = (axisSym-(guess*guess));
-				} 
-				axisSym = guess;
+		//round2, unless there is no symmetry 
+		if (a == 0) {
+			System.out.println("Axis of Symmetry: N/A");
+		}else {
+		int lastNum= (int)(axisSym*1000%10);
+		int answer= (int)(100*axisSym);
+		if(lastNum>= 5) {
+			axisSym = ((answer+1)/100.0);
+		}else {
+			axisSym = answer/100.0;
+	}
 		System.out.println("Axis of Symmetry: " + axisSym);
-		
+	}
 		//plug x into equation to get y value (vertex)
 		double vertex = a*(axisSym*axisSym)+(b*axisSym)+c;
+		if(a == 0) {
+			System.out.println("Vertex: N/A");
+		}else {
 		System.out.println("Vertex: (" + axisSym + "," + vertex + ")");
-		
+		}
 		// use sqrt and abs value and discriminant to find xinter using quad equation
 		double discrim = (b * b) - 4*(a*c);
-		if (discrim < 0) {
+		if (a == 0) {
+			double xinter = (-1*c)/b;
+			System.out.println("X-intercept: (" + xinter + ",0)");
+	}else if (discrim < 0) {
 			System.out.println("X-intercept: There are no real solutions");
-		}else {
-		guess= 1.00;
-		diff= 1;
+		} else if (discrim > 0) {
+		double guess= 1.00;
+		double diff= 1;
 			while(diff>=.005) { //difference between the estimate and true
 				guess= ((discrim/guess)+guess)/2;
 				//find absvalue of difference
 				if(discrim-(guess*guess)<=0) {
 					diff = (discrim-(guess*guess))*(-1);
-				}else{
+				}
+				else{
 					diff = (discrim-(guess*guess));
 				}
 			}
@@ -75,11 +85,18 @@ public class Quadratic {
 			}else {
 				x2=answer/100.0;
 			}
-			System.out.println("X-intercept(s):" + x1 + " and " + x2);
+			System.out.println("X-intercepts: (" + x1 + ",0) "  + " and " + "(" + x2 + ",0)");
+		} else {
+			double rt = (-1*b)/(2*a);
+			//when discriminant = 0, it means that the the two roots are the same (so 1 rt)
+			//the equation of the root when there is just one is -b/2a
+			System.out.println("X-intercept: (" + rt + ",0)");
 		}
+			
 			//to find  y-intercept just need to plug 0 into the equation, which cancels out first two terms
 			System.out.println("Y-intercept: (0," + c + ")");
-				
-			}return "";
-	}
+		
+		return "";
+}
+
 }
