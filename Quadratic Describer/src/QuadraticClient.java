@@ -12,15 +12,15 @@ public class QuadraticClient {
 		double c =0;
 		boolean done =false;
 		String response ="";
-		while (!done) {
-			a = userInput.nextDouble();
+		while (!done) {//while still want to describe
+			a = userInput.nextDouble(); //gets variables
 			b = userInput.nextDouble();
 			c = userInput.nextDouble();
 			//do the calculatiions
 			Quadratic.quadrDescriber( a, b, c);
 			System.out.println("Do you want to keep going? Type \"quit\" to end");
-			response = userInput.next();
-			if (response.equals("quit")) {
+			response = userInput.next();//they'll type something
+			if (response.equals("quit")) { //if it is "quit"...
 				done = true;
 				System.out.println("Have a nice day!");
 			}else {
